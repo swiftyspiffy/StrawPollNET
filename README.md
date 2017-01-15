@@ -1,4 +1,5 @@
 # StrawpollNET - .NET Strawpoll Library for Creating and Accessing Strawpolls
+[![NuGet Pre Release](https://img.shields.io/nuget/vpre/StrawPollNET.svg)](https://www.nuget.org/packages/StrawPollNET)
 
 ### Overview
 This is a simple library designed to allow for the creation and accessing of Strawpolls in a really simple fashion. Synchronous and asynchrnous calls are available and all poll details (including vote counts) are returned when creating a new poll or fetching an existing poll.
@@ -46,7 +47,7 @@ The current results are:
 
 
 ### Availability
-Available via Nuget: will be shortly
+Available via Nuget: `Install-Package StrawPollNET`
 
 ### Examples and Implementations
 - StrawpollNET Example Application - This project is included in this repo as a master example project.
