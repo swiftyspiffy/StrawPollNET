@@ -20,6 +20,10 @@ StrawpollNET.Models.CreatedPoll newPoll = new StrawPollNET.API.Create.CreatePoll
 Console.WriteLine($"Go vote at my new poll, available here: {newPoll.PollUrl}");
 
 ```
+Output:
+```
+Go vote at my new poll, available here: https://strawpoll.me/12112663
+```
 Fetch a Strawpoll
 ```
 // Get the very first Strawpoll ever made
@@ -31,6 +35,15 @@ Console.WriteLine("The current results are:");
 foreach(KeyValuePair<string, int> result in fetchedPoll.Results)
     Console.WriteLine($"-{result.Key}: {result.Value} votes");
 ```
+Output:
+```
+The current results are:
+-Shrek: 1 votes
+-Ants: 0 votes
+-A Bug's Life: 0 votes
+-Lion King: 0 votes
+```
+
 
 ### Availability
 Available via Nuget: will be shortly
