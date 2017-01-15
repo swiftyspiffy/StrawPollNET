@@ -10,7 +10,7 @@ namespace StrawPollNET.Models
     public class CreatedPoll
     {
         /// <summary>Auto generated id of created poll.</summary>
-        public long Id { get; protected set; }
+        public int Id { get; protected set; }
         /// <summary>Titled assigned by poll creator.</summary>
         public string Title { get; protected set; }
         /// <summary>All options currently in the poll.</summary>
@@ -29,7 +29,7 @@ namespace StrawPollNET.Models
         {
             bool isMulti, isCaptcha;
 
-            Id = long.Parse(json.SelectToken("id").ToString());
+            Id = int.Parse(json.SelectToken("id").ToString());
             Title = json.SelectToken("title")?.ToString();
             foreach (JToken option in json.SelectToken("options"))
                 Options.Add(option.ToString());

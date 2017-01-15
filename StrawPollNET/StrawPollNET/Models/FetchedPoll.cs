@@ -10,7 +10,7 @@ namespace StrawPollNET.Models
     public class FetchedPoll
     {
         /// <summary>Auto generated id of created poll.</summary>
-        public long Id { get; protected set; }
+        public int Id { get; protected set; }
         /// <summary>Titled assigned by poll creator.</summary>
         public string Title { get; protected set; }
         /// <summary>Boolean representing whether or not poll is multiple choice.</summary>
@@ -29,7 +29,7 @@ namespace StrawPollNET.Models
         {
             bool isMulti, isCaptcha;
 
-            Id = long.Parse(json.SelectToken("id").ToString());
+            Id = int.Parse(json.SelectToken("id").ToString());
             Title = json.SelectToken("title")?.ToString();
             if (bool.TryParse(json.SelectToken("multi").ToString(), out isMulti) && isMulti) Multi = true;
             if (bool.TryParse(json.SelectToken("captcha").ToString(), out isCaptcha) && isCaptcha) Captcha = true;

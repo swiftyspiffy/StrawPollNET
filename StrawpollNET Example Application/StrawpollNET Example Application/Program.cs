@@ -87,7 +87,7 @@ namespace StrawpollNET_Example_Application
             return await StrawPollNET.API.Create.CreatePollAsync(title, options, multi, dupCheck, captcha);
         }
 
-        private async static Task<StrawPollNET.Models.FetchedPoll> getPoll(string pollId)
+        private async static Task<StrawPollNET.Models.FetchedPoll> getPoll(int pollId)
         {
             return await StrawPollNET.API.Get.GetPollAsync(pollId);
         }
