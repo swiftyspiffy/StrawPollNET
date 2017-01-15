@@ -25,7 +25,7 @@ namespace StrawPollNET.Internal
                 throw new Exceptions.BadParameterException("Invalid number of options provided. You must provide at least 2 options, but no more than 30.");
             string payload = Helpers.BuildPayload(title, options, multi, dupCheck, captcha);
             var resp = await Helpers.MakePostRequest(apiEndpoint, payload);
-            return new CreatedPoll(resp);
+            return new CreatedPoll(JObject.Parse(resp));
         }
     }
 }

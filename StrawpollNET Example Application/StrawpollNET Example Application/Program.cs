@@ -80,6 +80,7 @@ namespace StrawpollNET_Example_Application
             Console.WriteLine("Poll URL: " + getResp.PollUrl);
 
             Console.WriteLine("And that's everything! Submit to close!");
+            Console.ReadLine();
         }
 
         private async static Task<StrawPollNET.Models.CreatedPoll> createPoll(string title, List<string> options, bool multi, StrawPollNET.Enums.DupCheck dupCheck, bool captcha)
