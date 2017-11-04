@@ -1,10 +1,9 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using StrawPollNET.Models;
+using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using StrawPollNET.Models;
-using Newtonsoft.Json.Linq;
 
 namespace StrawPollNET.Internal
 {
@@ -18,7 +17,7 @@ namespace StrawPollNET.Internal
             return new FetchedPoll(JObject.Parse(resp));
         }
 
-        public static async Task<CreatedPoll> CreatePoll(string title, List<string> options, bool multi = false, 
+        public static async Task<CreatedPoll> CreatePoll(string title, List<string> options, bool multi = false,
             Enums.DupCheck dupCheck = Enums.DupCheck.Normal, bool captcha = false)
         {
             if (options.Count < 2 || options.Count > 30)

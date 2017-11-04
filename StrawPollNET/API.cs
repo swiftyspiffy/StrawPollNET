@@ -1,9 +1,7 @@
-﻿using System;
+﻿using StrawPollNET.Models;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using StrawPollNET.Models;
 
 namespace StrawPollNET
 {
@@ -30,7 +28,7 @@ namespace StrawPollNET
             /// <returns>FetchedPoll is returned, which houses all poll data.</returns>
             public async static Task<FetchedPoll> GetPollAsync(int pollId) => await Internal.Calls.GetPoll(pollId);
         }
-        
+
         /// <summary>
         /// Namespace for functions to create a new Strawpoll.
         /// </summary>

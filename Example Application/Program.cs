@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace StrawpollNET_Example_Application
+namespace Example_Application
 {
     class Program
     {
@@ -18,18 +16,18 @@ namespace StrawpollNET_Example_Application
             Console.WriteLine("Great! What should the options for this poll be? Submit 'end' to stop submitting options.");
             string input = "";
             List<string> options = new List<string>();
-            while(input != "end")
+            while (input != "end")
             {
                 Console.WriteLine($"What should option #{options.Count + 1} be?");
                 input = Console.ReadLine();
-                if(input != "end")
+                if (input != "end")
                     options.Add(input);
             }
             Console.WriteLine($"Awesome, a total of {options.Count} options will be great!");
 
             input = "";
             Console.WriteLine("Should voters be allowed to select multiple options, or just a single option? Submit 'single' or 'multiple'.");
-            while(input != "single" && input != "multiple")
+            while (input != "single" && input != "multiple")
             {
                 input = Console.ReadLine();
                 if (input != "single" && input != "multiple")
@@ -50,7 +48,7 @@ namespace StrawpollNET_Example_Application
             Console.WriteLine("Looks like we're done! I will create your poll now, and list out the details below!");
             Console.WriteLine("-----------------------------");
 
-            var createResp = createPoll(title, options, multi, StrawPollNET.Enums.DupCheck.Normal, captcha).Result ;
+            var createResp = createPoll(title, options, multi, StrawPollNET.Enums.DupCheck.Normal, captcha).Result;
 
             Console.WriteLine("Poll created! The details are below:");
             Console.WriteLine("Poll ID: " + createResp.Id);

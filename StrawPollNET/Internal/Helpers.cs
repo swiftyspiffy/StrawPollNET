@@ -3,7 +3,6 @@ using StrawPollNET.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
@@ -59,7 +58,7 @@ namespace StrawPollNET.Internal
             json.Add("title", title);
             json.Add("options", new JArray(options));
             json["multi"] = multi;
-            switch(dupCheck)
+            switch (dupCheck)
             {
                 case Enums.DupCheck.Disabled:
                     json.Add("dupcheck", "disabled");
