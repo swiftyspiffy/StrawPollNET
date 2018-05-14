@@ -9,7 +9,7 @@ namespace StrawPollNET.Internal
 {
     internal static class Calls
     {
-        private static string apiEndpoint = "http://www.strawpoll.me/api/v2/polls";
+        private static string apiEndpoint = "https://www.strawpoll.me/api/v2/polls";
 
         public static async Task<FetchedPoll> GetPoll(int pollId)
         {
