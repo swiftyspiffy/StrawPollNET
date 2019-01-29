@@ -11,11 +11,11 @@ Create Strawpoll
 string pollTitle = "Which of these are great movies? You can vote on multiple!";
 List<string> allOptions = new List<string>() { "Shrek", "Ants", "A Bug's Life", "Lion King" };
 bool multipleChoice = true;
-StrawpollNET.Enums.DupCheck dupCheck = StrawpollNET.Enums.DupCheck.Normal;
+StrawPollNET.Enums.DupCheck dupCheck = StrawPollNET.Enums.DupCheck.Normal;
 bool requireCaptcha = true;
 
 // Create the poll
-StrawpollNET.Models.CreatedPoll newPoll = new StrawPollNET.API.Create.CreatePoll(pollTitle, allOptions, multipleChoice, dupCheck, requireCaptcha);
+StrawPollNET.Models.CreatedPoll newPoll = StrawPollNET.API.Create.CreatePoll(pollTitle, allOptions, multipleChoice, dupCheck, requireCaptcha);
 
 // Show poll link
 Console.WriteLine($"Go vote at my new poll, available here: {newPoll.PollUrl}");
@@ -29,7 +29,7 @@ Fetch a Strawpoll
 ```
 // Get the very first Strawpoll ever made
 int pollId = 1;
-StrawpollNET.Models.FetchedPoll fetchedPoll = Strawpoll.API.Get.GetPoll(pollId);
+StrawPollNET.Models.FetchedPoll fetchedPoll = StrawPollNET.API.Get.GetPoll(pollId);
 
 // Show results
 Console.WriteLine("The current results are:");
