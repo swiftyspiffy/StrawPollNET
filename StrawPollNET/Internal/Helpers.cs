@@ -51,7 +51,7 @@ namespace StrawPollNET.Internal
             }
         }
 
-        public static string BuildPayload(string title, List<string> options, bool multi = false,
+        public static string BuildPayload(string title, IList<string> options, bool multi = false,
             Enums.DupCheck dupCheck = Enums.DupCheck.Normal, bool captcha = false)
         {
             JObject json = new JObject();
