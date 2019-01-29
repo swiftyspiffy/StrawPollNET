@@ -43,7 +43,7 @@ namespace StrawPollNET
             /// <param name="dupCheck">Enum reflecting the kind of duplication checking Strawpoll should do.</param>
             /// <param name="captcha">Boolean value dicating whether or not a captcha should be required.</param>
             /// <returns>CreatedPoll is returned, which houses all poll data.</returns>
-            public static CreatedPoll CreatePoll(string title, List<string> options, bool multi = false, Enums.DupCheck dupCheck = Enums.DupCheck.Normal, bool captcha = false) => Task.Run(() => Internal.Calls.CreatePoll(title, options, multi, dupCheck, captcha)).Result;
+            public static CreatedPoll CreatePoll(string title, IList<string> options, bool multi = false, Enums.DupCheck dupCheck = Enums.DupCheck.Normal, bool captcha = false) => Task.Run(() => Internal.Calls.CreatePoll(title, options, multi, dupCheck, captcha)).Result;
             /// <summary>
             /// [SYNC] This call will attempt to create a poll and return an object housing all the details about the poll.
             /// </summary>
@@ -53,7 +53,7 @@ namespace StrawPollNET
             /// <param name="dupCheck">Enum reflecting the kind of duplication checking Strawpoll should do.</param>
             /// <param name="captcha">Boolean value dicating whether or not a captcha should be required.</param>
             /// <returns>CreatedPoll is returned, which houses all poll data.</returns>
-            public async static Task<CreatedPoll> CreatePollAsync(string title, List<string> options, bool multi = false, Enums.DupCheck dupCheck = Enums.DupCheck.Normal, bool captcha = false) => await Internal.Calls.CreatePoll(title, options, multi, dupCheck, captcha);
+            public async static Task<CreatedPoll> CreatePollAsync(string title, IList<string> options, bool multi = false, Enums.DupCheck dupCheck = Enums.DupCheck.Normal, bool captcha = false) => await Internal.Calls.CreatePoll(title, options, multi, dupCheck, captcha);
         }
     }
 }
