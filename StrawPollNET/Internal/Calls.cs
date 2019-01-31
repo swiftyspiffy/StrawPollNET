@@ -17,7 +17,7 @@ namespace StrawPollNET.Internal
             return new FetchedPoll(JObject.Parse(resp));
         }
 
-        public static async Task<CreatedPoll> CreatePoll(string title, List<string> options, bool multi = false,
+        public static async Task<CreatedPoll> CreatePoll(string title, IList<string> options, bool multi = false,
             Enums.DupCheck dupCheck = Enums.DupCheck.Normal, bool captcha = false)
         {
             if (options.Count < 2 || options.Count > 30)
